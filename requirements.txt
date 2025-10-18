@@ -1,0 +1,14 @@
+# Whisper large-v2 model dependencies (Ubuntu production)
+openai-whisper==20250625
+
+# Install PyTorch with bundled CUDA (includes all libraries!)
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch
+torchvision
+torchaudio
+
+# Audio processing
+ffmpeg-python==0.2.0
+
+# Note: Make sure ffmpeg is installed on system:
+# sudo apt install ffmpeg -y
