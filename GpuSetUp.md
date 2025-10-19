@@ -96,7 +96,7 @@ python3 -c "import torch; print(torch.__version__); print(torch.version.cuda)"
 If CUDA version shows `None`, reinstall PyTorch with CUDA:
 ```bash
 pip uninstall torch torchvision torchaudio -y
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 ```
 
 **Solution 2: Check NVIDIA Drivers**
@@ -131,7 +131,7 @@ python whisper_transcriber.py audio.webm hi --model medium
 - 1 hour audio: ~6-12 minutes
 
 ### GPU Memory Usage
-- **large-v2**: ~8GB VRAM
+- **large-v2**: ~10GB VRAM
 - **medium**: ~5GB VRAM
 - **small**: ~2GB VRAM
 
@@ -140,20 +140,23 @@ python whisper_transcriber.py audio.webm hi --model medium
 ## Supported Languages
 
 Common language codes:
+- `ar` - Arabic
+- `de` - German
 - `en` - English
 - `es` - Spanish
 - `fr` - French
-- `de` - German
-- `it` - Italian
-- `pt` - Portuguese
-- `ru` - Russian
-- `zh` - Chinese
+- `hi` - Hindi
+- `id` - Indonesian
 - `ja` - Japanese
 - `ko` - Korean
-- `hi` - Hindi
-- `ar` - Arabic
+- `mr` - Marathi
+- `pt` - Portuguese
+- `ru` - Russian
+- `tr` - Turkish
+- `vi` - Vietnamese
+- `zh` - Mandarin
 
-Full list: 99 languages supported
+Full list: [99 languages supported](https://github.com/openai/whisper#available-models-and-languages)
 
 ---
 
@@ -187,7 +190,7 @@ sudo systemctl start whisper-transcribe
 ### Docker Deployment
 
 ```dockerfile
-FROM nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04
+FROM nvidia/cuda:12.6.0-cudnn9-runtime-ubuntu24.04
 
 RUN apt-get update && apt-get install -y \
     python3-pip ffmpeg \

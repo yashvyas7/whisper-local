@@ -5,7 +5,7 @@ Production-ready GPU transcription using OpenAI's Whisper large-v2. Auto-detects
 ## Requirements
 
 - Ubuntu 20.04/22.04/24.04
-- NVIDIA GPU with 8GB+ VRAM
+- NVIDIA GPU with 10GB+ VRAM
 - CUDA drivers installed
 
 ## Installation
